@@ -10,10 +10,10 @@ class App extends Component {
         ]
     }
 
-    changeStateHandler = () => {
+    changeStateHandler = (newName) => {
         this.setState({
             persons: [
-                {name: 'Bagus', age: 22},
+                {name: newName, age: 22},
                 {name: 'Supriyadi', age: 25}
             ]
         })
@@ -24,8 +24,8 @@ class App extends Component {
             <h1> Awesome React!</h1>
             <p> This is really awesome!</p>
             {/* use the component in react */}
-            <button onClick={this.changeStateHandler}> Change State </button>
-            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+            <button onClick={() => this.changeStateHandler('Santriwati')}> Change State </button>
+            <Person name={this.state.persons[0].name} age={this.state.persons[0].age} click={this.changeStateHandler.bind(this, 'Santri!')}/>
             <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
         </div>
       );

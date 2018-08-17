@@ -83,11 +83,18 @@ untuk bisa menggunakan event handler, penulisan fungsi di rekomendasikan menggun
 class App extends Component {
     // App is name class
     state = {
-        person: []
+        person: [
+            { name: 'Indra', age: 21 }
+        ]
     }
     
-    eventHanlder = () => {
-        return true
+    changeValueState = () => {
+        // change value state using this.setState => this function by react
+        this.setState({
+            person: [
+                { name: 'max', age: 23 }
+            ]
+        })
     }
 }
 ```
