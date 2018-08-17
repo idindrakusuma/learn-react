@@ -65,3 +65,29 @@ import Person from "./Person.js"
 // use component
 <Person />
 ```
+
+### State
+secara sederhana, state berfungsi untuk menyimpan data. penulisan state sendiri harus didalam component yang extend component, maksudnya?
+```javascript
+class App extends Component {
+    // App is name class
+    state = {
+        person: []
+    }
+}
+```
+
+### Event Handler react
+untuk bisa menggunakan event handler, penulisan fungsi di rekomendasikan menggunakan `arrow function`. Penulisan fungsinya di bawah state,
+```javascript
+class App extends Component {
+    // App is name class
+    state = {
+        person: []
+    }
+    
+    eventHanlder = () => {
+        return true
+    }
+}
+```
