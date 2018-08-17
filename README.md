@@ -98,3 +98,27 @@ class App extends Component {
     }
 }
 ```
+
+### React Style CSS
+Penting banget ngerti perananan CSS dalam react. Selayaknya waktu belajar vueJS dulu, bahwa style dibagi menjadi dua, global dan local (scope).
+Di react pun sama, jadi model style css bisa berbagai macam. 
+- kalau pengen global mode, bisa bikin file css dari componentnya, misal component `Person.js` bikin `Person.css`. Nah didalamnya itu akan menjadi style global. Atau bisa taruh file css di `public/index.html`, kalau yang ini sama kayak biasa lah.
+- sedangkan kalau pengen inline, atau hanya berlaku pada component tersebut maka perlu bikin object style di compoenent tersebut. example
+```javascript
+import React from 'react'
+
+class Person extends Component {
+    render () {
+        const styleButton = {
+            backgroundColor: 'red',
+            textTransform: 'uppercase'
+        }
+        
+     return ({
+        <div className="container">
+            <button style={style}> Hello button! </button>
+        </div>
+     });   
+    };
+}
+```
