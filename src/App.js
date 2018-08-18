@@ -60,7 +60,9 @@ class App extends Component {
       }
 
       /* if using logic in jsx, better than login in javascript */
-      let persons = null;
+	  let persons = null;
+	  /* dynamic class */
+	  let buttonClass = ['btn', 'ml-2'];
 
       if (this.state.showPerson) {
           persons = (
@@ -70,9 +72,15 @@ class App extends Component {
                                      age={person.age} delete={() => this.deletePersonHandler(index)}
                                      changed={(event) => this.changeNameHandler(event, person.id)}/>
                     })
-          );
-      }
-
+		  );
+		  
+		  /* dynamic classes */
+		  buttonClass.push('btn-danger');
+	  } else {
+		  buttonClass.push('btn-success');
+	  }
+	  
+	  
       return (
         <div className="container">
 					<div className="card mt-4">
@@ -81,7 +89,7 @@ class App extends Component {
 							<div>
 									<button onClick={() => this.changeStateHandler('Santriwati')} style={styleButtonInline}
 													className="btn btn-danger"> Change State </button>
-									<button onClick={this.showHidePerson} className="btn btn-info ml-2"> Show/Hide </button>
+									<button onClick={this.showHidePerson} className={buttonClass.join(' ')}> Show/Hide </button>
 							</div>
 						</div>
 					</div>
