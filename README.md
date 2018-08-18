@@ -137,3 +137,6 @@ class App extends Component {
 export default Radium(App)
 
 ```
+
+- Using Media Query
+untuk menggunakan menggunakan media query menggunakan redium, maka perlu impmement <StyleRoot> pada root component. 
