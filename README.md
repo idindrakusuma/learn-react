@@ -122,3 +122,18 @@ class Person extends Component {
     };
 }
 ```
+
+### React Style using pseudo selector css
+ada satu problem ketika ingin melakukan styling pada local component, yaitu tidak bisanya menggunakan pseudo selector seperti :hover, :active atau @media. oleh karena itu diperlukan package baru yaitu `Radium`.
+```javascript
+// npm install radium
+// import di component
+import Radium from 'radium'
+
+class App extends Component {
+// ... 
+}
+
+export default Radium(App)
+
+```

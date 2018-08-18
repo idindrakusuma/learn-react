@@ -1,7 +1,14 @@
 import React from "react";
+import Radium from 'radium';
 import "./Person.css"
 
 const person = (props) => {
+    const style = {
+			'@media (min-width: 500px)' : {
+				width: '450px'
+			}
+    }
+
     return (
         <div className="mt-1 mb-1">
             <div className="card">
@@ -10,7 +17,7 @@ const person = (props) => {
 								</div>
                 <div className="card-body">
 										<input type="text" placeholder="Input your own name.."
-											className="form-control" 
+											className="form-control" style={style}
 											onChange={props.changed}
 											value={props.name} />
                 </div>
@@ -22,4 +29,4 @@ const person = (props) => {
     );
 }
 
-export default person
+export default Radium(person);

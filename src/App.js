@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Radium from  'radium';
+import Radium, {StyleRoot} from  'radium';
 import './App.css';
 import Person from './Person/Person'
 
@@ -86,19 +86,21 @@ class App extends Component {
 	  
 	  
       return (
-        <div className="container">
-					<div className="card mt-4">
-						<h5 className="card-header">Awesome React!</h5>
-						<div className="card-body">
-							<div>
-									<button onClick={() => this.changeStateHandler('Santriwati')} style={styleButtonInline}
-													className="btn btn-danger"> Change State </button>
-									<button onClick={this.showHidePerson} className={buttonClass.join(' ')}> Show/Hide </button>
+				<StyleRoot>
+					<div className="container">
+						<div className="card mt-4">
+							<h5 className="card-header">Awesome React!</h5>
+							<div className="card-body">
+								<div>
+										<button onClick={() => this.changeStateHandler('Santriwati')} style={styleButtonInline}
+														className="btn btn-danger"> Change State </button>
+										<button onClick={this.showHidePerson} className={buttonClass.join(' ')}> Show/Hide </button>
+								</div>
 							</div>
 						</div>
+							{ persons }
 					</div>
-            { persons }
-        </div>
+				</StyleRoot>
       );
   }
 }
