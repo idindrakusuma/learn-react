@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import Radium, {StyleRoot} from  'radium';
-import classApp from './App.css';
-import Person from '../components/Persons/Person/Person'
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 	state = {
@@ -59,43 +59,25 @@ class App extends Component {
   render() {
     /* if using logic in jsx, better than login in javascript */
 	  let persons = null;
-	  /* dynamic class */
-	  let buttonClass = '';
 
-      if (this.state.showPerson) {
-          persons = (
-                  this.state.persons.map((person, index) => {
-                      return <Person name={person.name}
-                                     key={person.id}
-                                     age={person.age} delete={() => this.deletePersonHandler(index)}
-                                     changed={(event) => this.changeNameHandler(event, person.id)}/>
-                    })
-		  );
-		  
-		  /* dynamic classes */
-		  buttonClass = classApp.red;
-	  } else {
-			buttonClass = classApp.green;
-	  }
+    if (this.state.showPerson) {
+      persons = (
+        <Persons 
+          persons={this.state.persons} 
+          delete={this.deletePersonHandler} 
+          changeName={this.changeNameHandler} />
+      ); 
+    }
 	  
-	  
-      return (
-					<div className="container">
-						<div className={classApp.App}>
-							<div className="card mt-4">
-								<h5 className="card-header">Awesome React!</h5>
-								<div className="card-body">
-									<div>
-											<button onClick={() => this.changeStateHandler('Santriwati')} 
-												className={buttonClass}> Change State </button>
-											<button onClick={this.showHidePerson} className={buttonClass}> Show/Hide </button>
-									</div>
-								</div>
-							</div>
-						</div>
-							{ persons }
-					</div>
-      );
+    return (
+        <div className="container">
+          <Cockpit 
+            changeStateHandler={this.changeStateHandler} 
+            showPerson={this.state.showPerson}
+            showHidePerson={this.showHidePerson} />
+          { persons }
+        </div>
+    );
   }
 }
 
