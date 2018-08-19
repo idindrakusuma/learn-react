@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Radium, {StyleRoot} from  'radium';
-import './App.css';
+// import Radium, {StyleRoot} from  'radium';
+import classApp from './App.css';
 import Person from './Person/Person'
 
 class App extends Component {
@@ -56,17 +56,10 @@ class App extends Component {
 	}
 
   render() {
-      const styleButtonInline = {
-		  textTransform: 'uppercase',
-		  ':hover': {
-			  textTransform: 'capitalize'
-		  }
-      }
-
-      /* if using logic in jsx, better than login in javascript */
+    /* if using logic in jsx, better than login in javascript */
 	  let persons = null;
 	  /* dynamic class */
-	  let buttonClass = ['btn', 'ml-2'];
+	  let buttonClass = '';
 
       if (this.state.showPerson) {
           persons = (
@@ -79,30 +72,31 @@ class App extends Component {
 		  );
 		  
 		  /* dynamic classes */
-		  buttonClass.push('btn-danger');
+		  buttonClass = classApp.red;
 	  } else {
-		  buttonClass.push('btn-success');
+			buttonClass = classApp.green;
 	  }
 	  
 	  
       return (
-				<StyleRoot>
 					<div className="container">
-						<div className="card mt-4">
-							<h5 className="card-header">Awesome React!</h5>
-							<div className="card-body">
-								<div>
-										<button onClick={() => this.changeStateHandler('Santriwati')} style={styleButtonInline}
-														className="btn btn-danger"> Change State </button>
-										<button onClick={this.showHidePerson} className={buttonClass.join(' ')}> Show/Hide </button>
+						<div className={classApp.App}>
+							<div className="card mt-4">
+								<h5 className="card-header">Awesome React!</h5>
+								<div className="card-body">
+									<div>
+											<button onClick={() => this.changeStateHandler('Santriwati')} 
+												className={buttonClass}> Change State </button>
+											<button onClick={this.showHidePerson} className={buttonClass}> Show/Hide </button>
+									</div>
 								</div>
 							</div>
 						</div>
 							{ persons }
 					</div>
-				</StyleRoot>
       );
   }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;

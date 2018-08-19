@@ -140,3 +140,28 @@ export default Radium(App)
 
 - Using Media Query
 untuk menggunakan menggunakan media query menggunakan redium, maka perlu impmement <StyleRoot> pada root component. 
+
+### React style using CSS Loader
+Salah satu fitur yang sangat direkomendasikan adalah menggunakan css loader webpack. jadi jika menggunakan style ini, kita tidak perlu import Redium, tapi cukup meggunakan webpack. cara penggunaanya adalah dengan melakukan `npm run eject`. kemudian akan muncul 2 folder baru yaitu `config` dan `scripts`.
+- Langkah selanjutnya adalah dengan menambahkan option script css berikut:
+
+```javascript
+// config/webpack.config.dev.js
+options : {
+    importLoaders: 1,
+    modules: true,
+    localIdentName: '[name]__[local]__[hash:64:5]'
+}
+```
+
+```javascript
+options: {
+    importLoaders: 1,
+    minimize: true,
+    sourceMap: shouldUseSourceMap,
+    modules: true,
+    localIdentName: '[name]__[local]__[hash:64:5]'
+},
+```
+
+_* Yang ditambahkan cuma modules serta localIdentName_
