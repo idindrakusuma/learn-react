@@ -4,6 +4,19 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[App.js] inside contructor', props);
+  }
+
+  componentWillMount() {
+    console.log('[App.js] inside componentWillMount()');
+  }
+
+  componentDidMount() {
+    console.log('[App.js] inside componentDidUpdate()')
+  }
+
 	state = {
 		persons: [
 				{id: 1, name: 'Indra', age: 20},
@@ -57,6 +70,7 @@ class App extends Component {
 	}
 
   render() {
+    console.log('[App.js] inside in render()');
     /* if using logic in jsx, better than login in javascript */
 	  let persons = null;
 
