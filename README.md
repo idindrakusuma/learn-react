@@ -166,3 +166,46 @@ options: {
 ```
 
 _* Yang ditambahkan cuma `modules` serta `localIdentName`_
+
+### Stateful Components and Stateless Component
+inti dari dua tipe ini adalah penggunaan dan fungsi yang bisa dilakukanya. 
+- Jika `Stateful Component`, semua lifecycle pada react bisa digunakan, didalamnya juga bisa menggunakan `props`, `function` maupun `state` itu sendiri, cara implementnya
+
+```javascript
+import React, {Component} from 'react';
+
+class nameComponent extends Component {
+  state = {
+    person = []
+  }
+
+  nameFunction = () => {
+
+  }
+
+  render () {
+
+    return ();
+  }
+
+}
+
+export default nameComponent;
+```
+
+sedangkan untuk `Stateless Component` fungsinya hanya bisa menerima `props` saja. hal ini cukup penting untuk memperkecil aplikasi serta lebih fokus pada component terkecil.
+> Jika suatu component bisa diselesaikan dengan Stateless Component atau `Functional Component` maka gunakanlah Stateless Component.
+
+untuk implementasinya, 
+```javascript
+import React from 'react'
+
+const nameComponent = (props) => {
+  return ();
+}
+
+export default cockpit;
+```
+
+### Component Lifecycle
+> Don't call this.setState in `componentDidMount` karena itu akan mentrigger untuk melakukan re-rendering.
