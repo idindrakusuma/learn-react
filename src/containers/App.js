@@ -71,7 +71,8 @@ class App extends Component {
 	  
     return (
         <div className="container">
-          <Cockpit 
+          <Cockpit
+            appTitle={this.props.title}
             changeStateHandler={this.changeStateHandler} 
             showPerson={this.state.showPerson}
             showHidePerson={this.showHidePerson} />

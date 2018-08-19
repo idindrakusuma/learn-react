@@ -12,7 +12,7 @@ const cockpit = ( props ) => {
   return (
     <div className={classCockpit.Cockpit}>
       <div className="card mt-4">
-        <h5 className="card-header">Awesome React!</h5>
+        <h5 className="card-header">{ props.appTitle }</h5>
         <div className="card-body">
           <div>
               <button 
