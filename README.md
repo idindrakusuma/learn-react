@@ -155,6 +155,7 @@ options : {
 ```
 
 ```javascript
+// config/webpack.config.prod.js
 options: {
     importLoaders: 1,
     minimize: true,
@@ -164,4 +165,4 @@ options: {
 },
 ```
 
-_* Yang ditambahkan cuma modules serta localIdentName_
+_* Yang ditambahkan cuma `modules` serta `localIdentName`_
