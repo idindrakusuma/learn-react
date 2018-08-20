@@ -232,4 +232,11 @@ export default NameComponent;
 Apa kata instruktur soal component lifecycle ini? 
 > Sebisa mungkin pakai `functional component`, tetapi jika tidak, gunakanlah `Pure Component` jika ada kondisi memerlukan untuk melakukan pengecekan data sebelum melakukan rendering ulang atau menggunakan `shouldComponentUpdate()` dan jika tidak ada masalah untuk pengecekan data, maka gunakanlah `Component` biasa, agar performa tetap terjaga. Keep in mind to research your component! 
 ---
+
+### HOC (High Order Component)
+Berfungsi sebagai component yang sangat diutamakan. biasanya component ini digunakan untuk wrapping component. 
+
+mengapa perlu?
+> karena dalam satu component harus memiliki satu root element, dan jika kita menggunakan div, bisa jadi akan problem dengan class atau style lain, maka diperlukan `hoc` ini.
+
 Masih berlanjut...

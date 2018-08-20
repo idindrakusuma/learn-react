@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 // import Radium from 'radium';
 import classPerson from "./Person.css"
+/* import aux component */
+import Aux from "../../../hoc/aux";
+import withClass from "../../../hoc/withClass";
 
 class Person extends Component {
   constructor(props) {
@@ -18,8 +21,7 @@ class Person extends Component {
   render () {
     console.log('[Person.js] inside in render()');
     return (
-      <div className="mt-1 mb-1">
-          <div className="card">
+      <Aux>
               <div className="card-header">
                   <p onClick={this.props.click}>Hello! I'm {this.props.name}! {this.props.age} years old! {this.props.children}</p>
               </div>
@@ -37,11 +39,10 @@ class Person extends Component {
                     className="btn btn-danger btn-sm float-right" 
                     onClick={this.props.delete}>Delete</button>
               </div>
-          </div>
-      </div>
+      </Aux>
     );
   }
 }
 
 // export default Radium(person);
-export default Person;
+export default withClass(Person, 'card mb-1 mt-1');
