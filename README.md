@@ -209,3 +209,27 @@ export default cockpit;
 
 ### Component Lifecycle
 > Don't call this.setState in `componentDidMount` karena itu akan mentrigger untuk melakukan re-rendering.
+
+### Functional Component vs PureComponent
+Secara default, jika kita menggunakan component biasa, maka react akan melakukan re-rendering setiap kita melakukan trigger dalam aplikasi `walaupun` data yang ditampilkan sama dengan sebelumnya. Oleh karena itu, agar performa react bisa lebih maksimal maka kita bisa menggunakan `Pure Component` jika `terdapat kondisi yang akan memaksa react melakukan rendering ulang`.
+
+secara default, `Pure Component` aan melakukan pengecekan dengan state selanjutnya, apakah ada perubahan atau tidak. jika ada perubahan, maka react akan melakukan rendering ulang. Jika tidak, maka react tidak akan melakukan rendering. 
+
+Untuk implementasinya, 
+
+```javascript
+import React, {PureComponent} from 'react';
+
+class NameComponent extends PureComponent {
+  // like component lifecycle
+  render () {
+    return ();
+  }
+}
+
+export default NameComponent;
+```
+Apa kata instruktur soal component lifecycle ini? 
+> Sebisa mungkin pakai `functional component`, tetapi jika tidak, gunakanlah `Pure Component` jika ada kondisi memerlukan untuk melakukan pengecekan data sebelum melakukan rendering ulang atau menggunakan `shouldComponentUpdate()` dan jika tidak ada masalah untuk pengecekan data, maka gunakanlah `Component` biasa, agar performa tetap terjaga. Keep in mind to research your component! 
+---
+Masih berlanjut...
