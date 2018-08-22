@@ -23,7 +23,8 @@ class App extends Component {
 				{id: 2, name: 'Dinda', age: 21},
 				{id: 3, name: 'Saraswati', age: 24}
 		],
-		showPerson: false
+    showPerson: false,
+    toggleHidePersonClicked: 0
 	}
 
 	changeStateHandler = (newName) => {
@@ -66,7 +67,12 @@ class App extends Component {
 
 	showHidePerson = () => {
 		const doesPerson = this.state.showPerson;
-		this.setState({ showPerson : !doesPerson})
+		this.setState((prevState, props) => {
+      return {
+        showPerson: !doesPerson,
+        toggleHidePersonClicked: prevState.toggleHidePersonClicked + 1
+      }
+    })
 	}
 
   render() {

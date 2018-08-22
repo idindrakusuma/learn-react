@@ -239,4 +239,14 @@ Berfungsi sebagai component yang sangat diutamakan. biasanya component ini digun
 mengapa perlu?
 > karena dalam satu component harus memiliki satu root element, dan jika kita menggunakan div, bisa jadi akan problem dengan class atau style lain, maka diperlukan `hoc` ini.
 
+## Penggunaan `setState` yang benar
+secara default, fungsi `this.setState({})` merupakan fungsi `async`. Jadi tidak bagus untuk implement yang berkaitan dengan value sebelumnya. Karena bisa jadi tidak valid, maka untuk pendekatan yang lebih bagus, dibuat fungsi. seperti berikut:
+```javascript
+this.setState((prevState, props) => {
+  return {
+    toggleHidePersonClicked: prevState.toggleHidePersonclicked + 1
+  }
+})
+```
+
 Masih berlanjut...
