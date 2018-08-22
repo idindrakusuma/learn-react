@@ -280,4 +280,9 @@ _docs : https://reactjs.org/docs/typechecking-with-proptypes.html_
 
 lengkapnya disini : https://reactjs.org/docs/refs-and-the-dom.html
 
+## Update React 16.3
+untuk updatenya bisa dilihat disini, https://5b05c94e0733d530fd1fafe0--reactjs.netlify.com/docs/react-component.html#static-getderivedstatefromprops 
+
+Ada bebeerapa update pada `React.createRef()` dan penambahan lifecycle hooks react yaitu `static getDerivedStateFromProps` dan `getSnapshotBeforeUpdate()`
+
 Masih berlanjut...

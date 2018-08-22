@@ -9,12 +9,27 @@ class App extends Component {
     console.log('[App.js] inside contructor', props);
   }
 
-  componentWillMount() {
-    console.log('[App.js] inside componentWillMount()');
+  // componentWillMount() {
+  //   console.log('[App.js] inside componentWillMount()');
+  // }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('[App.js] inside getDerivedStateFromProps', nextProps, prevState);
+    return prevState;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('[App.js] inside getSnapshotBeforeUpdate')
+
+    return null
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] inside componentDidUpdate()')
   }
 
   componentDidMount() {
-    console.log('[App.js] inside componentDidUpdate()')
+    console.log('[App.js] inside componentDidMount()')
   }
 
 	state = {
