@@ -249,4 +249,27 @@ this.setState((prevState, props) => {
 })
 ```
 
+## Validation Props
+Berbeda dengan vue yang sudah ada fungsi bawaan untuk validasi `props`. Di react kita harus menambahkan sebuah modules baru yang di buat oleh tim `react` yaitu `prop-types`. 
+
+Install dengan cara `npm install -s prop-types` dan lakukan import seperti biasa, example
+```javascript
+import propTypes from 'prop-types'
+
+class Person extends Component {
+
+}
+
+Person.propTypes = {
+  age: propTypes.number,
+  name: propTypes.string,
+  delete: propTypes.func
+};
+
+Person.defaultProps = {
+  name: 'noname'
+}
+```
+_docs : https://reactjs.org/docs/typechecking-with-proptypes.html_
+
 Masih berlanjut...

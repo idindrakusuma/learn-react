@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-// import Radium from 'radium';
+import propTypes from 'prop-types';
 import classPerson from "./Person.css"
 /* import aux component */
 import Aux from "../../../hoc/aux";
@@ -42,6 +42,16 @@ class Person extends Component {
       </Aux>
     );
   }
+}
+
+Person.propTypes = {
+  age: propTypes.number,
+  name: propTypes.string,
+  delete: propTypes.func
+};
+
+Person.defaultProps = {
+  name: 'noname'
 }
 
 // export default Radium(person);
