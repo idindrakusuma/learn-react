@@ -17,6 +17,9 @@ class Person extends Component {
 
   componentDidMount() {
     console.log('[Person.js] inside componentDidUpdate()')
+    if (this.props.position === 0) {
+      this.inputElement.focus();
+    }
   }
   render () {
     console.log('[Person.js] inside in render()');
@@ -27,7 +30,8 @@ class Person extends Component {
               </div>
               <div className="card-body">
                 <div className={classPerson.person}>
-                  <input 
+                  <input
+                      ref={ (inp) => { this.inputElement = inp }}
                       type="text" placeholder="Input your own name.."
                       className="form-control"
                       onChange={this.props.changed}

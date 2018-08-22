@@ -272,4 +272,12 @@ Person.defaultProps = {
 ```
 _docs : https://reactjs.org/docs/typechecking-with-proptypes.html_
 
+## Ref 
+`ref` bisa digunakan di stateful component pada react, dan `ref` berfungsi sebagai berikut ini,
+- Managing focus, text selection, or media playback.
+- Triggering imperative animations.
+- Integrating with third-party DOM libraries.
+
+lengkapnya disini : https://reactjs.org/docs/refs-and-the-dom.html
+
 Masih berlanjut...
